@@ -181,9 +181,6 @@ export const MenuDrawer = ({
   const App = (
     <>
       <Animated.View {...panResponder.panHandlers}>
-        <Animated.View style={[styles.drawer, drawerStyle, drawerTransform]}>
-          {MenuContent}
-        </Animated.View>
         <Animated.View style={[styles.container]}>
           <View
             style={[styles.mask]}
@@ -192,6 +189,9 @@ export const MenuDrawer = ({
             }}
           />
           <View pointerEvents={pointerEvents}>{children}</View>
+        </Animated.View>
+        <Animated.View style={[styles.drawer, drawerStyle, drawerTransform]}>
+          {MenuContent}
         </Animated.View>
       </Animated.View>
     </>

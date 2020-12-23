@@ -13,7 +13,7 @@ export const useMenuDrawer = ({
   tapToClose,
   backgroundColor,
   opacity,
-}: IUseDrawerParams = defaultParams): [ReactNode, () => void, () => void] => {
+}: IUseDrawerParams): [ReactNode, () => void, () => void] => {
   const [showMenu, setShowMenu] = useState(false);
 
   const onHideMenu = (): void => {
@@ -54,6 +54,6 @@ const defaultParams: IUseDrawerParams = {
   animationTime: 250,
   paddingGesture: 50,
   tapToClose: true,
-  backgroundColor: "#fff",
+  backgroundColor: "#000",
   opacity: 0.35,
 };

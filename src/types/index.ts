@@ -40,7 +40,7 @@
   }
   export  interface IUseDrawerParams {
     children: ReactNode;
-    MenuContent?: JSX.Element;
+    MenuContent: JSX.Element;
     position?: Position;
     drawerWidth?: number;
     animationTime?: number;
