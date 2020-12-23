@@ -7,6 +7,7 @@
     tapToClose: boolean;
     paddingGesture: number;
     drawerWidth: number;
+    allowedSwipeWidth?: number;
     animationTime: number;
     position: Position;
     children: ReactNode;
@@ -43,6 +44,7 @@
     MenuContent: JSX.Element;
     position?: Position;
     drawerWidth?: number;
+    allowedSwipeWidth?: number
     animationTime?: number;
     paddingGesture?: number;
     tapToClose?: boolean;

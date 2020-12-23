@@ -44,6 +44,7 @@ As a result, no need disabling 'scrollEnabled' prop in your ScrollView, FlatList
       backgroundColor='#000'
       drawerWidth={300}
       animationTime={250}
+      allowedSwipeWidth={200}
       tapToClose
       paddingGesture={50}
       position="right"
@@ -111,30 +112,32 @@ return {ScreenWithMenu};
 
 <br/><h3>MenuDrawer Props:</h3>
 
-| Prop            | Type                    | Required | Desciption                                                                                                                             |
-| --------------- | ----------------------- | -------- | -------------------------------------------------------------------------------------------------------------------------------------- |
-| open            | boolean                 | true     | If true, shows menu side. If false, hides menu side                                                                                    |
-| onShowMenu      | (show: boolean) => void | true     | Need for manage open prop                                                                                                              |
-| tapToClose      | boolean                 | true     | If true, single tap outside of menu area - hides menu. If false, notihing happened                                                     |
-| position        | 'left', 'right'         | true     | Set menu position on screen                                                                                                            |
-| paddingGesture  | number                  | true     | Define area for hand gesture to show menu                                                                                              |
-| drawerWidth     | number                  | true     | Set menu width on screen                                                                                                               |
-| animationTime   | number                  | true     | Set animation time on show\hide menu side                                                                                              |
-| opacity         | number                  | true     | Set max opacity value to children's mask. Opacity will be dynamically changed from 0 to 'your_value' on 'moving state'. Use range 0..1 |
-| backgroundColor | string                  | true     | Set background color to children's mask. Background color will be applied to mask on 'moving state' only. Use hex or rgb colors        |
-| MenuContent     | JSX.Element             | true     | It's your component that will be rendered on menu side                                                                                 |
-| children        | React.ReactNode         | true     | It's your app\screen component that will be wrapped by MenuDrawer                                                                      |
+| Prop              | Type                    | Required | Default Value     | Desciption                                                                                                                                                         |
+| ----------------- | ----------------------- | -------- | ----------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
+| open              | boolean                 | true     | -                 | If true, shows menu side otherwise hides                                                                                                                           |
+| onShowMenu        | (show: boolean) => void | true     | -                 | Need for manage open prop                                                                                                                                          |
+| tapToClose        | boolean                 | true     | -                 | If true, single tap outside of menu area - hides menu otherwise notihing happened                                                                                  |
+| position          | 'left', 'right'         | true     | -                 | Set menu position on screen                                                                                                                                        |
+| paddingGesture    | number                  | true     | -                 | Define area for hand gesture to show menu                                                                                                                          |
+| drawerWidth       | number                  | true     | -                 | Set menu width on screen                                                                                                                                           |
+| allowedSwipeWidth | number                  | false    | width_screen\*0.5 | Set width of hand swipe that manages menu side. If real swipe's width >= 'your_value', menu side will be opened\hidden otherwise will be returned to it's original |
+| animationTime     | number                  | true     | -                 | Set animation time on show\hide menu side                                                                                                                          |
+| opacity           | number                  | true     | -                 | Set max opacity value to children's mask. Opacity will be dynamically changed from 0 to 'your_value' on 'moving state'. Use range 0..1                             |
+| backgroundColor   | string                  | true     | -                 | Set background color to children's mask. Background color will be applied to mask on 'moving state' only. Use hex or rgb colors                                    |
+| MenuContent       | JSX.Element             | true     | -                 | It's your component that will be rendered on menu side                                                                                                             |
+| children          | React.ReactNode         | true     | -                 | It's your app\screen component that will be wrapped by MenuDrawer                                                                                                  |
 
 <br/><h3>useMenuDrawer params:</h3>
 
-| param           | Type            | Required | Default Value     |
-| --------------- | --------------- | -------- | ----------------- |
-| tapToClose      | boolean         | false    | true              |
-| position        | 'left', 'right' | false    | 'right'           |
-| paddingGesture  | number          | false    | 50                |
-| drawerWidth     | number          | false    | width_screen\*0.7 |
-| animationTime   | number          | false    | 250               |
-| opacity         | number          | false    | 0.35              |
-| backgroundColor | string          | false    | '#000'            |
-| MenuContent     | JSX.Element     | true     | -                 |
-| children        | React.ReactNode | true     | -                 |
+| param             | Type            | Required | Default Value     |
+| ----------------- | --------------- | -------- | ----------------- |
+| tapToClose        | boolean         | false    | true              |
+| position          | 'left', 'right' | false    | 'right'           |
+| paddingGesture    | number          | false    | 50                |
+| drawerWidth       | number          | false    | width_screen\*0.7 |
+| allowedSwipeWidth | number          | false    | width_screen\*0.5 |
+| animationTime     | number          | false    | 250               |
+| opacity           | number          | false    | 0.35              |
+| backgroundColor   | string          | false    | '#000'            |
+| MenuContent       | JSX.Element     | true     | -                 |
+| children          | React.ReactNode | true     | -                 |

@@ -1,6 +1,6 @@
 {
   "name": "@stanislav7766/rn-menu-drawer",
-  "version": "1.0.9",
+  "version": "1.1.0",
   "description": "menu drawer component for react-native",
   "main": "lib/module/index.js",
   "repository": {

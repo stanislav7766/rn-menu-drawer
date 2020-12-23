@@ -13,6 +13,7 @@ import {
   GestureResponderEvent,
   PanResponderGestureState,
 } from "react-native";
+import { WIDTH_SCREEN } from "../constants";
 import {
   IMenuDrawerProps,
   IPlatformContainerProps,
@@ -34,6 +35,7 @@ export const MenuDrawer = ({
   MenuContent,
   open,
   drawerWidth,
+  allowedSwipeWidth,
   animationTime,
   position,
   tapToClose,
@@ -131,7 +133,7 @@ export const MenuDrawer = ({
       return;
     }
 
-    if (isAllowedSwipe(dx, drawerWidth)) {
+    if (isAllowedSwipe(dx, allowedSwipeWidth as number)) {
       onShowMenu(config.needOpenOrClose(dx));
       return;
     }
@@ -198,4 +200,8 @@ export const MenuDrawer = ({
   );
 
   return <PlatformContainer>{App}</PlatformContainer>;
+};
+
+MenuDrawer.defaultProps = {
+  allowedSwipeWidth: WIDTH_SCREEN / 2,
 };

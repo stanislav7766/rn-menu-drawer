@@ -8,6 +8,7 @@ export const useMenuDrawer = ({
   MenuContent,
   position,
   drawerWidth,
+  allowedSwipeWidth,
   animationTime,
   paddingGesture,
   tapToClose,
@@ -30,6 +31,9 @@ export const useMenuDrawer = ({
       position={position ?? (defaultParams.position as Position)}
       onShowMenu={setShowMenu}
       drawerWidth={drawerWidth ?? (defaultParams.drawerWidth as number)}
+      allowedSwipeWidth={
+        allowedSwipeWidth ?? (defaultParams.allowedSwipeWidth as number)
+      }
       animationTime={animationTime ?? (defaultParams.animationTime as number)}
       paddingGesture={
         paddingGesture ?? (defaultParams.paddingGesture as number)
@@ -51,6 +55,7 @@ const defaultParams: IUseDrawerParams = {
   MenuContent: <></>,
   position: "right",
   drawerWidth: WIDTH_SCREEN * 0.7,
+  allowedSwipeWidth: WIDTH_SCREEN / 2,
   animationTime: 250,
   paddingGesture: 50,
   tapToClose: true,
